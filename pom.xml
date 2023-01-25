@@ -5,7 +5,7 @@
 	<groupId>com.imran</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.1</version>
+	<version>1.0.1.SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
 
@@ -21,8 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://34.238.170.150:9000/</sonar.host.url>
-		<sonar.login>8b8fe69fd6a049af18358f83b96c2cad430a3abf</sonar.login> 
+		<sonar.host.url>http://18.234.158.49:9000</sonar.host.url>
+		<sonar.login>ee15866e1a39abb00c0996a7da47382f863a1e67</sonar.login> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.90.142.63:8081/repository/imran-application-release</url>
+	      <url>http://3.92.146.170:8081/repository/imran-application-release</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.90.142.63:8081/repository/imran-application-snapshot</url>
+	      <url>http://3.92.146.170:8081/repository/imran-application-snapshot</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
