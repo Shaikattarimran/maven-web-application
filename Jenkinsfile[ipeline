@@ -8,7 +8,7 @@ node {
     stage('Build'){
         sh "$mavenHome/bin/mvn clean package"
     }// build closing
-    
+    /*
     stage('soanrcube'){
         sh "$mavenHome/bin/mvn clean package sonar:sonar"
     } //sonarcube closing
@@ -23,5 +23,5 @@ node {
            sh "scp -o strictHostkeyChecking=no target/maven-web-application.war ec2-user@54.82.228.178:/opt/apache-tomcat/webapps"
         }
     }//closing target
-    
+    */
 } //node closing
