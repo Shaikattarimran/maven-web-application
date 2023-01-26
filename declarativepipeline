@@ -7,6 +7,9 @@ pipeline {
   buildDiscarder logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   timestamps()
 }
+parameters {
+  booleanParam defaultValue: true, description: 'saimran', name: 'declarative'
+}
 
     stages{
         //deply the version source code
