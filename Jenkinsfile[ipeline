@@ -1,9 +1,9 @@
 node {
     def mavenHome = tool name: "maven-3.8.7"
     
-    echo "The Node name is: ${env.NODE_NAME}"
-    echo "The job name is : ${env.JOB_NAME}"
-    echo "The Build number is: ${env.BUILD_NUMBER}"
+    echo "The Node name is: ${NODE_NAME}"
+    echo "The job name is : ${JOB_NAME}"
+    echo "The Build number is: ${BUILD_NUMBER}"
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
     
     stage('checkoutstahge') {
