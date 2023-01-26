@@ -1,0 +1,45 @@
+pipeline {
+    agent any 
+    tools{
+        maven "maven-3.8.7"
+    }
+    stages{
+        //deply the version source code
+        stage('checkout'){
+            steps{
+                 git branch: 'development', credentialsId: '89802c72-9776-47ca-80f3-ca5eb1360654', url: 'https://github.com/Shaikattarimran/maven-web-application.git'
+            } //closing the steps
+        } //closing the steps
+        
+        //generate the cloneing
+        stage('mavenbuild'){
+            steps{
+                sh "mvn clean package"
+            }//closing the steps
+        }//clsoing the stage
+        
+        //testing the juint with the code
+        stage('sonarqube'){
+            steps{
+                sh "mvn clean package sonar:sonar"
+            }//closing the steps
+        }//clsoing the stage
+        
+        //upload the atirfactoty
+        stage('artifactdeploy'){
+            steps{
+                sh "mvn clean deploy"
+            }//closing the steps
+        }//clsoing the stage
+        
+        //deply the package into Tomcat
+        stage('deplythepackage'){
+            steps{
+                  sshagent(['ec2-user']) {
+           sh "scp -o strictHostkeyChecking=no target/maven-web-application.war ec2-user@52.204.246.186:/opt/apache-tomcat/webapps"
+                  }//closing the agent
+            }//closing the steps
+        }//closing the stage
+        
+    }//closing the stages
+}//closing the pipeline
