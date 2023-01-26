@@ -1,0 +1,27 @@
+node {
+    def mavenHome = tool name: "maven-3.8.7"
+    
+    stage('checkoutstahge') {
+        git branch: 'development', credentialsId: '89802c72-9776-47ca-80f3-ca5eb1360654', url: 'https://github.com/Shaikattarimran/maven-web-application.git'
+    } //checkout closing
+    
+    stage('Build'){
+        sh "$mavenHome/bin/mvn clean package"
+    }// build closing
+    
+    stage('soanrcube'){
+        sh "$mavenHome/bin/mvn clean package sonar:sonar"
+    } //sonarcube closing
+    
+    stage ('uploadatrifactoryintoNexus'){
+        sh "$mavenHome/bin/mvn clean package sonar:sonar deploy"
+    } //closing artifacrory
+     
+    //deploy the tomact server
+    stage('tomactserver'){
+        sshagent(['ec2-user']) {
+           sh "scp -o strictHostkeyChecking=no target/maven-web-application.war ec2-user@54.82.228.178:/opt/apache-tomcat/webapps"
+        }
+    }//closing target
+    
+} //node closing
