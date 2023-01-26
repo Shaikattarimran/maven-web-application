@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.92.146.170:8081/repository/imran-application-release</url>
+	      <url>http://54.89.131.245:8081/repository/imran-application-release</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.92.146.170:8081/repository/imran-application-snapshot</url>
+	      <url>http://54.89.131.245:8081/repository/imran-application-snapshot</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
