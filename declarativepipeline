@@ -1,8 +1,8 @@
 pipeline {
-     timestamps {
-    // some block
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '5', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  timestamps
 }
-buildName 'declarative - #${BUILD_NUMBER}'
 
     agent any 
     tools{
