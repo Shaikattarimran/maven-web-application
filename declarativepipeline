@@ -1,7 +1,5 @@
 pipeline {
-agent {
-label "slave1"
-}
+
     agent any 
     tools{
         maven "maven-3.8.7"
@@ -28,7 +26,7 @@ parameters {
                 sh "mvn clean package"
             }//closing the steps
         }//clsoing the stage
-        /*
+        
         //testing the juint with the code
         stage('sonarqube'){
             steps{
@@ -50,7 +48,7 @@ parameters {
            sh "scp -o strictHostkeyChecking=no target/maven-web-application.war ec2-user@52.204.246.186:/opt/apache-tomcat/webapps"
                   }//closing the agent
             }//closing the steps
-            */
+         
         }//closing the stage
         
     }//closing the stages
