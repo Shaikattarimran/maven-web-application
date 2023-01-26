@@ -2,7 +2,7 @@ pipeline {
      timestamps {
     // some block
 }
-buildName 'declarative - #${BuildName}'
+buildName 'declarative - #${BUILD_NUMBER}'
 
     agent any 
     tools{
